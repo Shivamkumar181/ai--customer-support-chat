@@ -179,15 +179,15 @@ function DashboardClient({ ownerId }: { ownerId: string }) {
                 transition={{ duration: 0.5 }}
                 className='fixed top-0 left-0 w-full z-50 bg-slate-900/80 backdrop-blur-xl border-b border-white/10'
             >
-                <div className='max-w-7xl mx-auto px-6 h-16 flex items-center justify-between'>
+                <div className='max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between'>
                     <div 
-                        className='text-lg font-semibold tracking-tight text-white cursor-pointer hover:text-amber-400 transition' 
+                        className='text-base sm:text-lg font-semibold tracking-tight text-white cursor-pointer hover:text-amber-400 transition' 
                         onClick={() => navigate.push("/")}
                     >
                         Support <span className='text-amber-400'>AI</span>
                     </div>
                     <button 
-                        className='px-4 py-2 rounded-lg border border-white/20 text-sm text-white hover:bg-white/5 hover:border-amber-400/30 transition' 
+                        className='px-3 sm:px-4 py-1.5 sm:py-2 rounded-lg border border-white/20 text-xs sm:text-sm text-white hover:bg-white/5 hover:border-amber-400/30 transition' 
                         onClick={() => navigate.push("/embed")}
                     >
                         Embed ChatBot
@@ -196,37 +196,37 @@ function DashboardClient({ ownerId }: { ownerId: string }) {
             </motion.div>
 
             {/* Main Content */}
-            <div className='flex justify-center px-4 py-14 mt-20'>
+            <div className='flex justify-center px-3 sm:px-4 py-10 sm:py-14 mt-16 sm:mt-20'>
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5 }}
-                    className='w-full max-w-3xl bg-slate-800/50 backdrop-blur-sm rounded-2xl shadow-2xl border border-white/10 p-6 sm:p-10'
+                    className='w-full max-w-3xl bg-slate-800/50 backdrop-blur-sm rounded-2xl shadow-2xl border border-white/10 p-4 sm:p-6 md:p-10 relative'
                 >
                     {/* Header */}
-                    <div className='mb-10'>
-                        <div className="inline-flex items-center gap-2 bg-amber-400/10 border border-amber-400/20 rounded-full px-3.5 py-1.5 mb-4">
+                    <div className='mb-6 sm:mb-10'>
+                        <div className="inline-flex items-center gap-2 bg-amber-400/10 border border-amber-400/20 rounded-full px-3 py-1 mb-3 sm:mb-4">
                             <div className="w-1.5 h-1.5 bg-amber-400 rounded-full animate-pulse" />
-                            <span className="text-[11px] text-amber-400/80 font-medium tracking-[0.15em] uppercase">Dashboard</span>
+                            <span className="text-[10px] sm:text-[11px] text-amber-400/80 font-medium tracking-[0.15em] uppercase">Dashboard</span>
                         </div>
-                        <h1 className='text-2xl font-bold text-white'>ChatBot Settings</h1>
-                        <p className='text-gray-400 mt-1 text-sm'>Manage your AI chatbot knowledge and business details</p>
+                        <h1 className='text-xl sm:text-2xl font-bold text-white'>ChatBot Settings</h1>
+                        <p className='text-gray-400 mt-1 text-xs sm:text-sm'>Manage your AI chatbot knowledge and business details</p>
                     </div>
 
                     {/* Business Details */}
-                    <div className='mb-10'>
-                        <h2 className='text-lg font-semibold text-white mb-4'>Business Details</h2>
-                        <div className='space-y-4'>
+                    <div className='mb-6 sm:mb-10'>
+                        <h2 className='text-base sm:text-lg font-semibold text-white mb-3 sm:mb-4'>Business Details</h2>
+                        <div className='space-y-3 sm:space-y-4'>
                             <input 
                                 type="text" 
-                                className='w-full rounded-xl bg-slate-700/50 border border-white/10 px-4 py-3 text-sm text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-amber-400/50 focus:border-transparent transition' 
+                                className='w-full rounded-xl bg-slate-700/50 border border-white/10 px-3 sm:px-4 py-2.5 sm:py-3 text-sm text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-amber-400/50 focus:border-transparent transition' 
                                 placeholder='Business Name' 
                                 value={businessName} 
                                 onChange={(e) => setBusinessName(e.target.value)} 
                             />
                             <input 
                                 type="email" 
-                                className='w-full rounded-xl bg-slate-700/50 border border-white/10 px-4 py-3 text-sm text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-amber-400/50 focus:border-transparent transition' 
+                                className='w-full rounded-xl bg-slate-700/50 border border-white/10 px-3 sm:px-4 py-2.5 sm:py-3 text-sm text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-amber-400/50 focus:border-transparent transition' 
                                 placeholder='Support Email' 
                                 value={supportEmail} 
                                 onChange={(e) => setSupportEmail(e.target.value)} 
@@ -235,12 +235,12 @@ function DashboardClient({ ownerId }: { ownerId: string }) {
                     </div>
 
                     {/* Knowledge Base */}
-                    <div className='mb-10'>
-                        <h2 className='text-lg font-semibold text-white mb-4'>Knowledge Base</h2>
-                        <p className='text-sm text-gray-400 mb-4'>Add FAQs, policies, delivery info, refunds, etc.</p>
+                    <div className='mb-6 sm:mb-10'>
+                        <h2 className='text-base sm:text-lg font-semibold text-white mb-3 sm:mb-4'>Knowledge Base</h2>
+                        <p className='text-xs sm:text-sm text-gray-400 mb-3 sm:mb-4'>Add FAQs, policies, delivery info, refunds, etc.</p>
                         <div className='space-y-4'>
                             <textarea 
-                                className='w-full h-54 rounded-xl bg-slate-700/50 border border-white/10 px-4 py-3 text-sm text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-amber-400/50 focus:border-transparent transition resize-none' 
+                                className='w-full min-h-[150px] sm:min-h-[200px] rounded-xl bg-slate-700/50 border border-white/10 px-3 sm:px-4 py-2.5 sm:py-3 text-sm text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-amber-400/50 focus:border-transparent transition resize-y' 
                                 placeholder={`Example:
 • Refund policy: 7 days return available
 • Delivery time: 3–5 working days
@@ -248,19 +248,19 @@ function DashboardClient({ ownerId }: { ownerId: string }) {
 • Support hours: 24/7`} 
                                 onChange={(e) => setKnowledge(e.target.value)} 
                                 value={knowledge} 
-                                rows={6}
+                                rows={5}
                             />
                         </div>
                     </div>
 
                     {/* Actions */}
-                    <div className='flex flex-wrap items-center gap-4'>
+                    <div className='flex flex-col sm:flex-row flex-wrap items-start sm:items-center gap-3 sm:gap-4'>
                         <motion.button
                             whileHover={{ scale: 1.03 }}
                             whileTap={{ scale: 0.97 }}
                             disabled={loading}
                             onClick={handleSettings}
-                            className="px-7 py-3 rounded-xl bg-gradient-to-r from-amber-400 to-yellow-300 text-black font-semibold text-sm hover:shadow-lg hover:shadow-amber-400/25 transition disabled:opacity-60"
+                            className="w-full sm:w-auto px-5 sm:px-7 py-2.5 sm:py-3 rounded-xl bg-gradient-to-r from-amber-400 to-yellow-300 text-black font-semibold text-xs sm:text-sm hover:shadow-lg hover:shadow-amber-400/25 transition disabled:opacity-60"
                         >
                             {loading ? "Saving..." : "Save Settings"}
                         </motion.button>
@@ -268,7 +268,7 @@ function DashboardClient({ ownerId }: { ownerId: string }) {
                             <motion.span
                                 initial={{ opacity: 0, y: 6 }}
                                 animate={{ opacity: 1, y: 0 }}
-                                className="text-sm font-medium text-emerald-400"
+                                className="text-xs sm:text-sm font-medium text-emerald-400"
                             >
                                 ✓ Settings saved successfully
                             </motion.span>
@@ -276,12 +276,12 @@ function DashboardClient({ ownerId }: { ownerId: string }) {
                     </div>
 
                     {/* Decorative Elements */}
-                    <div className="absolute -top-12 -right-12 w-24 h-24 bg-amber-400/5 rounded-full blur-2xl" />
-                    <div className="absolute -bottom-12 -left-12 w-24 h-24 bg-amber-400/5 rounded-full blur-2xl" />
+                    <div className="absolute -top-12 -right-12 w-20 sm:w-24 h-20 sm:h-24 bg-amber-400/5 rounded-full blur-2xl" />
+                    <div className="absolute -bottom-12 -left-12 w-20 sm:w-24 h-20 sm:h-24 bg-amber-400/5 rounded-full blur-2xl" />
                 </motion.div>
             </div>
         </div>
     )
 }
 
-export default DashboardClient;
+export default DashboardClient
